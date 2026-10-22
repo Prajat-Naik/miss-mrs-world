@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndieVogues | Miss &amp; Mrs. World India 2026 - Premier Beauty Pageant</title>
+    <meta name="description" content="IndieVogues presents Miss & Mrs. World India 2026 — India's premier luxury beauty pageant and haute couture platform empowering women across generations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/luxury-tokens.css">
+    <style>
+        :root {
+            --bg-midnight: #07090E;
+            --bg-card: rgba(18, 22, 32, 0.82);
+            --bg-card-hover: rgba(24, 29, 44, 0.95);
+            --gold-light: #FFF2C8;
+            --gold-primary: #E5C058;
+            --gold-deep: #B3820F;
+            --gold-gradient: linear-gradient(135deg, #FFF6D8 0%, #F5D377 25%, #E5C058 55%, #B8860B 85%, #8C6202 100%);
+            --gold-gradient-soft: linear-gradient(135deg, rgba(255, 242, 200, 0.15) 0%, rgba(229, 192, 88, 0.05) 100%);
+            --gold-border: rgba(229, 192, 88, 0.35);
+            --gold-border-bright: rgba(255, 241, 197, 0.85);
+            --gold-glow: 0 0 25px rgba(229, 192, 88, 0.28);
+            --gold-glow-intense: 0 0 45px rgba(229, 192, 88, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-midnight);
+            color: #F1F5F9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ambient luxury page gradient lighting */
+        .ambient-aurora {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 750px;
+            background: 
+                radial-gradient(ellipse 60% 40% at 50% -10%, rgba(229, 192, 88, 0.15) 0%, transparent 70%),
+                radial-gradient(circle 350px at 15% 20%, rgba(184, 134, 11, 0.08) 0%, transparent 60%),
+                radial-gradient(circle 350px at 85% 25%, rgba(229, 192, 88, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Top Pageant Announcement Ticker (FSIA / Mrs India Inc style) */
+        .pageant-ticker {
+            background: linear-gradient(90deg, #090B10 0%, #151822 50%, #090B10 100%);
+            border-bottom: 1px solid rgba(229, 192, 88, 0.25);
+            padding: 9px 16px;
+            position: relative;
+            z-index: 1001;
+            overflow: hidden;
+        }
+        .ticker-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--gold-light);
+            text-align: center;
+        }
+        .ticker-pill {
+            background: var(--gold-gradient);
+            color: #07090E;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(229, 192, 88, 0.4); }
+            50% { box-shadow: 0 0 20px rgba(229, 192, 88, 0.8); }
+        }
+
+        /* Sticky Luxury Glass Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 9, 14, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(229, 192, 88, 0.3);
+            padding: 14px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+        .brand-logo-wrap {
+            position: relative;
+        }
+        .brand-logo-wrap img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold-primary);
+            box-shadow: 0 0 16px rgba(229, 192, 88, 0.35);
+            display: block;
+            object-fit: cover;
+        }
+        .brand-crown-icon {
+            position: absolute;
+            top: -9px;
+            right: -6px;
+            font-size: 0.9rem;
+            filter: drop-shadow(0 0 4px #E5C058);
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .brand-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.14em;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            line-height: 1.1;
+        }
+        .brand-tag {
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+        nav a {
+            color: #E2E8F0;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.25s ease;
+        }
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--gold-gradient);
+            transition: width 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            color: var(--gold-light);
+        }
+        nav a:hover:after, nav a.active:after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: 1.5px solid var(--gold-primary);
+            color: var(--gold-light);
+            font-size: 1.3rem;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1024px) {
+            nav { display: none; }
+            .mobile-toggle { display: block; }
+            header { padding: 12px 20px; }
+        }
+
+        /* Mobile Drawer */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 320px;
+            height: 100vh;
+            background: #0B0E16;
+            border-left: 1px solid var(--gold-primary);
+            z-index: 2000;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transition: right 0.4s ease;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9);
+        }
+        .mobile-drawer.open { right: 0; }
+        .drawer-close {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: var(--gold-light);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        .mobile-drawer a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .mobile-drawer a:hover { color: var(--gold-primary); }
+
+        /* HERO SECTION - Regal Pageant Stage */
+        .hero {
+            position: relative;
+            min-height: 94vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 90px;
+            background: 
+                linear-gradient(180deg, rgba(7, 9, 14, 0.72) 0%, rgba(7, 9, 14, 0.5) 40%, rgba(7, 9, 14, 0.96) 100%),
+                radial-gradient(ellipse at 50% 30%, rgba(229, 192, 88, 0.18) 0%, transparent 60%),
+                url('assets/images/pageant-hero.jpg') center 22%/cover no-repeat;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 30%, rgba(7, 9, 14, 0.85) 100%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1060px;
+        }
+        .hero-pre-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 26px;
+            background: rgba(18, 22, 34, 0.9);
+            border: 1.5px solid var(--gold-primary);
+            border-radius: 40px;
+            color: var(--gold-light);
+            font-size: 0.84rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(229, 192, 88, 0.25);
+            backdrop-filter: blur(10px);
+        }
+        .hero-title-main {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.85rem, 5.5vw, 5.2rem);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95);
+        }
+        .hero-title-gold {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            filter: drop-shadow(0 2px 14px rgba(229, 192, 88, 0.4));
+        }
+        .hero-subtitle {
+            max-width: 820px;
+            margin: 0 auto 38px;
+            font-size: 1.18rem;
+            color: #E2E8F0;
+            font-weight: 400;
+            line-height: 1.85;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+        }
+
+        /* Pageant Highlight Pill Bar (Mrs India Inc Style) */
+        .pageant-key-dates {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            padding: 14px 32px;
+            background: rgba(14, 18, 28, 0.88);
+            border: 1px solid rgba(229, 192, 88, 0.4);
+            border-radius: 50px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+        .key-date-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.84rem;
+            color: #F8FAFC;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .key-date-item strong {
+            color: var(--gold-light);
+        }
+        .key-date-sep {
+            color: rgba(229, 192, 88, 0.5);
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Luxury Buttons */
+        .btn-pageant-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: var(--gold-gradient);
+            color: #07090E;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            border-radius: 4px;
+            border: 1px solid var(--gold-light);
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(229, 192, 88, 0.4), 0 0 15px rgba(255, 242, 200, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-pageant-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(229, 192, 88, 0.65), 0 0 25px rgba(255, 241, 197, 0.5);
+            color: #000000;
+        }
+        .btn-pageant-glass {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 36px;
+            background: rgba(18, 22, 34, 0.7);
+            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            border-radius: 4px;
+            border: 1.5px solid var(--gold-primary);
+            text-decoration: none;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+        .btn-pageant-glass:hover {
+            background: rgba(229, 192, 88, 0.2);
+            border-color: var(--gold-light);
+            color: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 22px rgba(229, 192, 88, 0.3);
+        }
+
+        /* Credibility Stats Bar */
+        .stats-ribbon {
+            background: linear-gradient(180deg, #101420 0%, #0A0D15 100%);
+            border-top: 1px solid rgba(229, 192, 88, 0.35);
+            border-bottom: 1px solid rgba(229, 192, 88, 0.35);
+            padding: 42px 24px;
+            position: relative;
+            z-index: 2;
+        }
+        .stats-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        @media (max-width: 900px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        }
+        @media (max-width: 500px) {
+            .stats-grid { grid-template-columns: 1fr; gap: 22px; }
+        }
+        .stat-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 16px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(229, 192, 88, 0.15);
+            transition: all 0.3s ease;
+        }
+        .stat-box:hover {
+            border-color: var(--gold-primary);
+            background: rgba(229, 192, 88, 0.05);
+            transform: translateY(-3px);
+        }
+        .stat-value {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.04em;
+            line-height: 1;
+        }
+        .stat-title {
+            font-size: 0.84rem;
+            color: #CBD5E1;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 700;
+        }
+
+        /* Generic Section Container */
+        .section-wrap {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 100px 24px;
+            position: relative;
+            z-index: 2;
+        }
+        .section-header-center {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 60px;
+        }
+        .section-tag-gold {
+            font-size: 0.82rem;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            font-weight: 800;
+            margin-bottom: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title-regal {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+        .section-title-regal span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-desc-light {
+            color: #CBD5E1;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* CATEGORIES SECTION (FSIA & Mrs India Inc Style) */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+        @media (max-width: 960px) {
+            .categories-grid { grid-template-columns: 1fr; }
+        }
+        .category-card {
+            background: linear-gradient(145deg, #151926 0%, #0E121C 100%);
+            border: 1.5px solid rgba(229, 192, 88, 0.35);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .category-card:hover {
+            border-color: var(--gold-border-bright);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), var(--gold-glow);
+            transform: translateY(-6px);
+        }
+        .category-card-header {
+            padding: 32px 36px 20px;
+            border-bottom: 1px solid rgba(229, 192, 88, 0.2);
+            background: rgba(229, 192, 88, 0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .category-badge {
+            background: rgba(229, 192, 88, 0.15);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+            font-size: 0.76rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        .category-card-body {
+            padding: 36px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .category-card-body h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #FFFFFF;
+            line-height: 1.2;
+        }
+        .category-card-body p {
+            color: #CBD5E1;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+        .category-criteria-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 10px 0 20px;
+        }
+        .category-criteria-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #F1F5F9;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 16px;
+            border-radius: 6px;
+            border-left: 3px solid var(--gold-primary);
+        }
+        .category-action {
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        /* 4-STAGE PAGEANT ROADMAP (The Road to the Crown) */
+        .roadmap-container {
+            margin-top: 30px;
+            position: relative;
+        }
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+        @media (max-width: 1024px) {
+            .roadmap-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        }
+        @media (max-width: 640px) {
+            .roadmap-grid { grid-template-columns: 1fr; }
+        }
+        .roadmap-card {
+            background: linear-gradient(160deg, #151926 0%, #0E121B 100%);
+            border: 1.5px solid rgba(229, 192, 88, 0.3);
+            border-radius: 10px;
+            padding: 32px 26px;
+            position: relative;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .roadmap-card:hover {
+            border-color: var(--gold-primary);
+            background: linear-gradient(160deg, #1C2132 0%, #121624 100%);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), var(--gold-glow);
+        }
+        .step-num-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            color: #07090E;
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            box-shadow: 0 4px 15px rgba(229, 192, 88, 0.35);
+        }
+        .roadmap-card h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            letter-spacing: 0.04em;
+        }
+        .roadmap-card p {
+            color: #CBD5E1;
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        /* HALL OF FAME / REIGNING QUEENS SPOTLIGHT (New Photos) */
+        .fame-showcase {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: stretch;
+            margin-bottom: 50px;
+        }
+        @media (max-width: 960px) {
+            .fame-showcase { grid-template-columns: 1fr; }
+        }
+        .queen-spotlight-card {
+            background: linear-gradient(145deg, #161A26 0%, #0E121C 100%);
+            border: 1.5px solid rgba(229, 192, 88, 0.4);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+            transition: all 0.35s ease;
+        }
+        .queen-spotlight-card:hover {
+            border-color: var(--gold-border-bright);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), var(--gold-glow);
+        }
+        .queen-img-box {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+        .queen-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .queen-spotlight-card:hover .queen-img-box img {
+            transform: scale(1.05);
+        }
+        .queen-badge-floating {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(7, 9, 14, 0.85);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+            font-size: 0.74rem;
+            padding: 6px 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-weight: 800;
+            backdrop-filter: blur(8px);
+        }
+        .queen-details {
+            padding: 32px 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .queen-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.85rem;
+            color: #FFFFFF;
+            line-height: 1.2;
+        }
+        .queen-title span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .queen-desc {
+            color: #CBD5E1;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        /* 3-Column Queens Grid */
+        .queens-gallery-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        @media (max-width: 960px) {
+            .queens-gallery-strip { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .queens-gallery-strip { grid-template-columns: 1fr; }
+        }
+        .strip-card {
+            background: #131722;
+            border: 1.5px solid rgba(229, 192, 88, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            position: relative;
+        }
+        .strip-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85), var(--gold-glow);
+        }
+        .strip-thumb {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        .strip-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .strip-card:hover .strip-thumb img {
+            transform: scale(1.06);
+        }
+        .strip-content {
+            padding: 24px;
+        }
+        .strip-tag {
+            font-size: 0.72rem;
+            color: var(--gold-primary);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .strip-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        .strip-desc {
+            font-size: 0.92rem;
+            color: #94A3B8;
+            line-height: 1.6;
+        }
+
+        /* WHY INDIEVOGUES (FSIA / Mrs India Inc Credibility) */
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+        @media (max-width: 992px) {
+            .perks-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .perks-grid { grid-template-columns: 1fr; }
+        }
+        .perk-box {
+            background: linear-gradient(150deg, #151824 0%, #0E111A 100%);
+            border: 1.5px solid rgba(229, 192, 88, 0.28);
+            border-radius: 8px;
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: all 0.3s ease;
+        }
+        .perk-box:hover {
+            border-color: var(--gold-primary);
+            background: #1B1F2D;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75), var(--gold-glow);
+        }
+        .perk-icon-wrap {
+            font-size: 2.2rem;
+            color: var(--gold-primary);
+        }
+        .perk-box h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            letter-spacing: 0.04em;
+        }
+        .perk-box p {
+            color: #CBD5E1;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* 4 CREATIVE PILLARS Bento */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 1024px) {
+            .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+        }
+        .pillar-card {
+            background: #141824;
+            border: 1.5px solid rgba(229, 192, 88, 0.28);
+            border-radius: 8px;
+            padding: 34px 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all 0.35s ease;
+        }
+        .pillar-card:hover {
+            border-color: var(--gold-primary);
+            background: #1B202F;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), var(--gold-glow);
+        }
+        .pillar-icon {
+            font-size: 2.2rem;
+        }
+        .pillar-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: #FFFFFF;
+            letter-spacing: 0.05em;
+        }
+        .pillar-desc {
+            color: #CBD5E1;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* REGISTRATION APPLICATION FORM (Preserving 100% Logic & Inputs) */
+        .audition-section-wrap {
+            background: linear-gradient(180deg, rgba(16, 20, 30, 0.8) 0%, rgba(10, 13, 20, 0.95) 100%);
+            border-top: 1px solid rgba(229, 192, 88, 0.3);
+            border-bottom: 1px solid rgba(229, 192, 88, 0.3);
+            padding: 100px 24px;
+            position: relative;
+            z-index: 2;
+        }
+        .form-luxury-card {
+            max-width: 980px;
+            margin: 0 auto;
+            background: linear-gradient(155deg, #171B27 0%, #0D1018 100%);
+            border: 1.5px solid rgba(229, 192, 88, 0.45);
+            border-radius: 14px;
+            padding: 56px 50px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(229, 192, 88, 0.15);
+        }
+        @media (max-width: 768px) {
+            .form-luxury-card { padding: 36px 20px; }
+        }
+        .form-header-bar {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .form-division-switch {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 34px;
+            flex-wrap: wrap;
+        }
+        .division-radio-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #11141F;
+            border: 1.5px solid rgba(229, 192, 88, 0.4);
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #FFFFFF;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .division-radio-btn input {
+            accent-color: var(--gold-primary);
+            cursor: pointer;
+            transform: scale(1.15);
+        }
+        .division-radio-btn:hover {
+            border-color: var(--gold-light);
+            background: #191E2C;
+        }
+        .form-grid-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .form-grid-inner { grid-template-columns: 1fr; }
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        @media (max-width: 768px) {
+            .form-group.full-width { grid-column: span 1; }
+        }
+        .field-label {
+            font-size: 0.82rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .field-input {
+            background: #0E1119;
+            border: 1.5px solid rgba(229, 192, 88, 0.38);
+            border-radius: 6px;
+            padding: 14px 18px;
+            color: #FFFFFF;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .field-input:focus {
+            border-color: var(--gold-light);
+            background: #161A26;
+            box-shadow: 0 0 20px rgba(229, 192, 88, 0.4);
+        }
+        .field-input::placeholder {
+            color: #94A3B8;
+        }
+        .field-hint {
+            font-size: 0.78rem;
+            color: #94A3B8;
+        }
+
+        /* FAQ ACCORDION (Pageant Guidelines) */
+        .faq-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .faq-item {
+            background: #131722;
+            border: 1.5px solid rgba(229, 192, 88, 0.28);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item.active {
+            border-color: var(--gold-primary);
+            background: #181D2B;
+        }
+        .faq-trigger {
+            padding: 22px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-family: 'Cinzel', serif;
+            font-size: 1.12rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .faq-icon {
+            font-size: 1.3rem;
+            color: var(--gold-primary);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            padding: 0 28px;
+            color: #CBD5E1;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 250px;
+            padding: 0 28px 24px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #06080D;
+            border-top: 1px solid rgba(229, 192, 88, 0.3);
+            color: #F1F5F9;
+            padding: 80px 24px 36px;
+            position: relative;
+            z-index: 2;
+        }
+        .footer-grid {
+            max-width: 1340px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+        .footer-brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+        }
+        .footer-brand-title span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .footer-desc {
+            color: #CBD5E1;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 16px;
+        }
+        .footer-social-link {
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+        .footer-social-link:hover {
+            color: var(--gold-light);
+        }
+        .footer-section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.18rem;
+            color: #FFFFFF;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+        }
+        .footer-link-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-link-list a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+        }
+        .footer-link-list a:hover {
+            color: var(--gold-primary);
+            padding-left: 4px;
+        }
+        .footer-concierge-phone {
+            font-size: 1.25rem;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .footer-bottom-bar {
+            max-width: 1340px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 26px;
+            text-align: center;
+            color: #94A3B8;
+            font-size: 0.88rem;
+        }
+
+        /* Floating WhatsApp Concierge Widget */
+        .floating-concierge {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #FFFFFF;
+            padding: 12px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            box-shadow: 0 8px 30px rgba(18, 140, 126, 0.45), 0 0 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+        .floating-concierge:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(18, 140, 126, 0.7);
+        }
+
+        /* Lightbox modal for Queens */
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 5, 8, 0.96);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            backdrop-filter: blur(14px);
+        }
+        .lightbox-modal.open { display: flex; }
+        .lightbox-inner {
+            max-width: 900px;
+            max-height: 90vh;
+            position: relative;
+            text-align: center;
+        }
+        .lightbox-inner img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+            border: 2px solid var(--gold-primary);
+            box-shadow: 0 0 40px rgba(229, 192, 88, 0.35);
+        }
+        .lightbox-close-btn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .lightbox-caption {
+            margin-top: 14px;
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            font-size: 1.15rem;
+        }
+
+        /* Success Submission Toast / Modal */
+        .toast-notification {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, #161A26 0%, #0D1018 100%);
+            border: 1.5px solid var(--gold-primary);
+            padding: 20px 32px;
+            border-radius: 8px;
+            color: #FFFFFF;
+            z-index: 4000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), var(--gold-glow);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: center;
+            max-width: 90%;
+        }
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<div class="ambient-aurora"></div>
+
+<!-- Pageant Alert Ticker (FSIA / Mrs India Inc Style) -->
+<div class="pageant-ticker">
+    <div class="ticker-inner">
+        <span class="ticker-pill">👑 AUDITIONS 2026</span>
+        <span>Official Auditions Live: Miss &amp; Mrs. World India 2026</span>
+        <span style="opacity: 0.4;">•</span>
+        <span>Direct Auditions Across 50+ Cities</span>
+        <span style="opacity: 0.4;">•</span>
+        <span>5-Star International Destination Finale</span>
+        <span style="opacity: 0.4;">•</span>
+        <a href="#register" style="color: var(--gold-light); text-decoration: underline; font-weight: 800;">Apply Online Now</a>
+    </div>
+</div>
+
+<!-- Sticky Luxury Header -->
+<header id="site-header">
+    <a href="index.html" class="brand">
+        <div class="brand-logo-wrap">
+            <span class="brand-crown-icon">👑</span>
+            <img src="https://indievogues.com/wp-content/uploads/2025/04/Indie-vogues-Logo-1024x1024-1.png" alt="IndieVogues Pageant Crest">
+        </div>
+        <div class="brand-text">
+            <span class="brand-name">IndieVogues</span>
+            <span class="brand-tag">Miss &amp; Mrs. World India</span>
+        </div>
+    </a>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="#categories">Divisions</a>
+        <a href="#journey">The Roadmap</a>
+        <a href="#hall-of-fame">Queens Hall</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="#pillars">4 Pillars</a>
+        <a href="gallery.html">Runway Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="music.html">Music &amp; Media</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+        <a href="#register" class="btn-pageant-gold" style="padding: 11px 26px; font-size: 0.8rem;">Register 2026</a>
+        <button class="mobile-toggle" id="menu-toggle" aria-label="Open Menu">☰</button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Backdrop Overlay -->
+<div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobile-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(229,192,88,0.25);">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.1rem;">👑</span>
+            <span style="font-family: 'Cinzel', serif; color: #FFF1C5; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.1em;">INDIEVOGUES</span>
+        </div>
+        <button class="drawer-close" id="drawer-close" aria-label="Close Menu" style="line-height: 1;">&times;</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="#categories">Competition Divisions</a>
+    <a href="#journey">Roadmap to Crown</a>
+    <a href="#hall-of-fame">Queens Hall of Fame</a>
+    <a href="sponsors.html">Sponsors &amp; Partners</a>
+    <a href="#pillars">The 4 Pillars</a>
+    <a href="gallery.html">Runway Gallery</a>
+    <a href="about.html">About IndieVogues</a>
+    <a href="music.html">Music Productions</a>
+    <a href="#faq">Audition FAQ</a>
+    <a href="#register" class="btn-pageant-gold" style="text-align: center; margin-top: 14px; padding: 12px;">Register Now 👑</a>
+</div>
+
+<!-- CINEMATIC HERO SECTION (New High-Glamour Photo & Regal Layout) -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-pre-badge">
+            <span>👑</span>
+            <span>National &amp; Global Beauty Pageant Platform</span>
+        </div>
+
+        <h1 class="hero-title-main">
+            Where Fashion<br>
+            <span class="hero-title-gold">Meets Sovereignty</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Uniting haute couture runways, transformative grooming mentorship, and royal coronation galas under one radiant crown. Steer your ambition to the international stage.
+        </p>
+
+        <!-- Key Highlights Bar (FSIA Style) -->
+        <div class="pageant-key-dates">
+            <div class="key-date-item">
+                <span>📍</span>
+                <span>Auditions: <strong>All Metros &amp; Virtual</strong></span>
+            </div>
+            <span class="key-date-sep">|</span>
+            <div class="key-date-item">
+                <span>🏆</span>
+                <span>Divisions: <strong>Miss &amp; Mrs</strong></span>
+            </div>
+            <span class="key-date-sep">|</span>
+            <div class="key-date-item">
+                <span>✨</span>
+                <span>Grand Finale: <strong>5-Star Destination</strong></span>
+            </div>
+            <span class="key-date-sep">|</span>
+            <div class="key-date-item">
+                <span>🌍</span>
+                <span>Global Title Delegation</span>
+            </div>
+        </div>
+
+        <div class="hero-cta-group">
+            <a href="#register" class="btn-pageant-gold">
+                <span>Apply For 2026 Auditions</span>
+                <span>👑</span>
+            </a>
+            <a href="#hall-of-fame" class="btn-pageant-glass">
+                <span>Explore Queens Hall</span>
+                <span>✨</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CREDIBILITY STATS BAR -->
+<section class="stats-ribbon">
+    <div class="stats-grid">
+        <div class="stat-box">
+            <span class="stat-value">500+</span>
+            <span class="stat-title">Empowered Candidates</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-value">2</span>
+            <span class="stat-title">Prestigious Divisions: Miss &amp; Mrs</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-value">25+</span>
+            <span class="stat-title">Haute Couture Designers</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-value">10M+</span>
+            <span class="stat-title">Global Media Impressions</span>
+        </div>
+    </div>
+</section>
+
+<!-- PAGEANT CATEGORIES SHOWCASE (Mrs India Inc & FSIA Format) -->
+<section class="section-wrap" id="categories">
+    <div class="section-header-center">
+        <span class="section-tag-gold">👑 Official Pageant Divisions</span>
+        <h2 class="section-title-regal">Two Royal Crowns, <span>One Radiant Stage</span></h2>
+        <p class="section-desc-light">
+            IndieVogues proudly offers distinct, equal categories tailored to empower women at every pivotal stage of life and career.
+        </p>
+    </div>
+
+    <div class="categories-grid">
+        <!-- Miss Category -->
+        <div class="category-card">
+            <div class="category-card-header">
+                <div>
+                    <span style="font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold-light); font-weight: 700; display: block; margin-bottom: 4px;">Division 01</span>
+                    <h3 style="font-family: 'Cinzel', serif; font-size: 1.75rem; color: #FFFFFF;">Miss World India 2026</h3>
+                </div>
+                <span class="category-badge">Age 18 – 35</span>
+            </div>
+            <div class="category-card-body">
+                <p>
+                    For ambitious, vibrant, and visionary young women ready to step onto the national spotlight. A life-defining launchpad for careers in fashion, entertainment, entrepreneurship, and global ambassadorship.
+                </p>
+
+                <ul class="category-criteria-list">
+                    <li>
+                        <span>✨</span>
+                        <div><strong>Eligibility:</strong> Unmarried / Single Indian citizens and NRI / OCI candidates aged 18 to 35.</div>
+                    </li>
+                    <li>
+                        <span>👠</span>
+                        <div><strong>Experience:</strong> No prior modeling or catwalk background required. Complete grooming provided.</div>
+                    </li>
+                    <li>
+                        <span>💎</span>
+                        <div><strong>Key Rewards:</strong> Official Crown &amp; Sash, Designer Wardrobe, National Media Cover, International Pageant Ticket.</div>
+                    </li>
+                </ul>
+
+                <div class="category-action">
+                    <a href="#register" class="btn-pageant-gold" style="width: 100%; justify-content: center;" onclick="selectCategory('miss')">
+                        Register As Miss Candidate
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mrs Category -->
+        <div class="category-card">
+            <div class="category-card-header">
+                <div>
+                    <span style="font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold-light); font-weight: 700; display: block; margin-bottom: 4px;">Division 02</span>
+                    <h3 style="font-family: 'Cinzel', serif; font-size: 1.75rem; color: #FFFFFF;">Mrs. World India 2026</h3>
+                </div>
+                <span class="category-badge">Age 21 Onwards</span>
+            </div>
+            <div class="category-card-body">
+                <p>
+                    A celebration of timeless elegance, inner resilience, and purposeful leadership. Designed specifically for married, divorced, or single mothers who refuse to let their dreams take a backseat.
+                </p>
+
+                <ul class="category-criteria-list">
+                    <li>
+                        <span>👑</span>
+                        <div><strong>Eligibility:</strong> Married / Divorced / Widowed / Single Mothers aged 21 years and above.</div>
+                    </li>
+                    <li>
+                        <span>🌟</span>
+                        <div><strong>Empowerment:</strong> Focused on personality, eloquence, leadership, and personal life journey.</div>
+                    </li>
+                    <li>
+                        <span>🏛️</span>
+                        <div><strong>Key Rewards:</strong> Prestigious Mrs India Crown, Celebrity PR Representation, Global Platform representation.</div>
+                    </li>
+                </ul>
+
+                <div class="category-action">
+                    <a href="#register" class="btn-pageant-gold" style="width: 100%; justify-content: center;" onclick="selectCategory('mrs')">
+                        Register As Mrs Candidate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- THE 4-STAGE PAGEANT ROADMAP (The Road to the Crown) -->
+<section class="section-wrap" id="journey" style="padding-top: 20px;">
+    <div class="section-header-center">
+        <span class="section-tag-gold">✨ The Selection Journey</span>
+        <h2 class="section-title-regal">Your Road to <span>The Coronation</span></h2>
+        <p class="section-desc-light">
+            Our structured multi-city journey turns ambitious participants into polished, confident queens ready for the world stage.
+        </p>
+    </div>
+
+    <div class="roadmap-container">
+        <div class="roadmap-grid">
+            <div class="roadmap-card">
+                <div class="step-num-pill">01</div>
+                <h4>Online Application</h4>
+                <p>Submit your digital audition form with basic details and photographs. No professional studio portfolio required.</p>
+            </div>
+
+            <div class="roadmap-card">
+                <div class="step-num-pill">02</div>
+                <h4>City Audition &amp; Interview</h4>
+                <p>Attend regional screening in your nearest hub or participate via virtual panel interview assessing personality and ambition.</p>
+            </div>
+
+            <div class="roadmap-card">
+                <div class="step-num-pill">03</div>
+                <h4>5-Day Luxury Boot Camp</h4>
+                <p>Intensive residency with celebrity choreographers: ramp-walk training, public speaking, fitness, and couture gown fittings.</p>
+            </div>
+
+            <div class="roadmap-card">
+                <div class="step-num-pill">04</div>
+                <h4>The Grand Coronation</h4>
+                <p>Walk the televised catwalk at a 5-star international destination in front of celebrity judges and crowned live on stage.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REIGNING QUEENS HALL OF FAME (Featuring Brand-New Photos) -->
+<section class="section-wrap" id="hall-of-fame">
+    <div class="section-header-center">
+        <span class="section-tag-gold">👑 Royal Hall of Fame</span>
+        <h2 class="section-title-regal">Celebrating India's <span>Reigning Queens</span></h2>
+        <p class="section-desc-light">
+            Witness the poise, glamour, and triumphant elegance of titleholders crowned by IndieVogues on national and international runways.
+        </p>
+    </div>
+
+    <!-- Spotlight Duo Showcase -->
+    <div class="fame-showcase">
+        <!-- Queen 1: Miss World India -->
+        <div class="queen-spotlight-card">
+            <div class="queen-img-box">
+                <span class="queen-badge-floating">👑 Miss World India Titleholder</span>
+                <img src="assets/images/pageant-hero.jpg" alt="Miss World India Titleholder" class="lightbox-trigger" data-caption="Miss World India - Crowned on National Runway">
+            </div>
+            <div class="queen-details">
+                <span class="strip-tag">National Flagship Winner</span>
+                <h3 class="queen-title">Miss World India <span>Coronation</span></h3>
+                <p class="queen-desc">
+                    Embodying charisma, modern leadership, and haute couture elegance in a hand-embroidered golden coronation gown before an international audience.
+                </p>
+            </div>
+        </div>
+
+        <!-- Queen 2: Mrs India World -->
+        <div class="queen-spotlight-card">
+            <div class="queen-img-box">
+                <span class="queen-badge-floating">👑 Mrs World India Titleholder</span>
+                <img src="assets/images/mrs-india-queen.jpg" alt="Mrs World India Titleholder" class="lightbox-trigger" data-caption="Mrs World India - Regal Emerald Coronation">
+            </div>
+            <div class="queen-details">
+                <span class="strip-tag">Timeless Sovereignty</span>
+                <h3 class="queen-title">Mrs. World India <span>Queen</span></h3>
+                <p class="queen-desc">
+                    Radiating grace, maternal pride, and entrepreneurial strength. Proving that married women hold immense power to inspire millions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Catwalk Stage Banner Showcase -->
+    <div class="queen-spotlight-card" style="margin-bottom: 40px;">
+        <div class="queen-img-box" style="aspect-ratio: 21/9; max-height: 480px;">
+            <span class="queen-badge-floating">🏛️ Grand Finale Coronation Night</span>
+            <img src="assets/images/pageant-finalists.jpg" alt="Pageant Finalists and Winners on Stage" class="lightbox-trigger" data-caption="National Grand Finale Coronation Podium - Winners &amp; Runners Up">
+        </div>
+        <div class="queen-details" style="padding: 28px 36px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: gap: 16px;">
+                <div>
+                    <span class="strip-tag">Celebration of Sisterhood</span>
+                    <h3 class="queen-title">The Grand Finale <span>Podium of Honor</span></h3>
+                    <p class="queen-desc" style="max-width: 800px; margin-top: 6px;">
+                        The unforgettable culmination of weeks of training, designer evening gown showcases, and national spotlight celebrating the winner and runner-ups.
+                    </p>
+                </div>
+                <a href="gallery.html" class="btn-pageant-glass" style="margin-top: 10px;">View Full Runway Archive</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY INDIEVOGUES (Mrs India Inc Style Advantage) -->
+<section class="section-wrap" style="padding-top: 20px;">
+    <div class="section-header-center">
+        <span class="section-tag-gold">✨ The IndieVogues Advantage</span>
+        <h2 class="section-title-regal">Why Step Onto <span>Our Runway?</span></h2>
+        <p class="section-desc-light">
+            We do not just hand out crowns—we sculpt confident public figures, media personalities, and international titleholders.
+        </p>
+    </div>
+
+    <div class="perks-grid">
+        <div class="perk-box">
+            <div class="perk-icon-wrap">👠</div>
+            <h4>Celebrity Ramp Choreography</h4>
+            <p>Master the runway walk, camera angles, body poise, and grace taught by India's celebrated fashion show directors.</p>
+        </div>
+
+        <div class="perk-box">
+            <div class="perk-icon-wrap">👗</div>
+            <h4>Designer Couture Wardrobe</h4>
+            <p>Showcase evening gowns, ethnic regalia, and cocktail attires curated by over 25+ top haute couture fashion designers.</p>
+        </div>
+
+        <div class="perk-box">
+            <div class="perk-icon-wrap">🎙️</div>
+            <h4>Voice Modulation &amp; Diction</h4>
+            <p>Develop stage presence, interview poise, and impromptu Q&amp;A brilliance to handle global judges with effortless confidence.</p>
+        </div>
+
+        <div class="perk-box">
+            <div class="perk-icon-wrap">📺</div>
+            <h4>Massive Media &amp; PR Reach</h4>
+            <p>Extensive coverage across leading fashion magazines, digital streaming channels, national press, and red carpet interviews.</p>
+        </div>
+
+        <div class="perk-box">
+            <div class="perk-icon-wrap">💎</div>
+            <h4>Zero Prior Experience Needed</h4>
+            <p>From students and home-makers to corporate leaders, our inclusive training welcomes newcomers and turns them into stars.</p>
+        </div>
+
+        <div class="perk-box">
+            <div class="perk-icon-wrap">🌍</div>
+            <h4>Direct Global Representation</h4>
+            <p>National titleholders receive exclusive opportunities to represent India at prestigious global beauty pageant forums.</p>
+        </div>
+    </div>
+</section>
+
+<!-- THE 4 CREATIVE PILLARS OF INDIEVOGUES (Retaining 100% of website information) -->
+<section class="section-wrap" id="pillars">
+    <div class="section-header-center">
+        <span class="section-tag-gold">✨ Our Creative Spectrum</span>
+        <h2 class="section-title-regal">The Four Pillars of <span>IndieVogues</span></h2>
+        <p class="section-desc-light">
+            A confluence of art, elegance, and global expression designed to elevate talents to the international spotlight.
+        </p>
+    </div>
+
+    <div class="pillars-grid">
+        <div class="pillar-card">
+            <div class="pillar-icon">👑</div>
+            <h3 class="pillar-title">Beauty Pageants</h3>
+            <p class="pillar-desc">Home of Miss &amp; Mrs. World India—celebrating inner radiance, character, and diversity across generations on global runways.</p>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-icon">✨</div>
+            <h3 class="pillar-title">Haute Couture</h3>
+            <p class="pillar-desc">Bespoke fashion weeks and exclusive designer showcases bringing India’s finest artisanal craftsmanship to world stages.</p>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-icon">🎵</div>
+            <h3 class="pillar-title">Music Production</h3>
+            <p class="pillar-desc">Cinematic music releases and audio-visual storytelling fusing contemporary soundscapes with high-fashion aesthetics.</p>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-icon">📰</div>
+            <h3 class="pillar-title">Media &amp; Magazine</h3>
+            <p class="pillar-desc">Editorial coverage, celebrity press, and digital publications spotlighting inspiring voices, trailblazers, and trendsetters.</p>
+        </div>
+    </div>
+</section>
+
+<!-- AUDITION REGISTRATION APPLICATION FORM (Preserves 100% of original logic & fields) -->
+<section class="audition-section-wrap" id="register">
+    <div class="form-luxury-card">
+        <div class="form-header-bar">
+            <span class="section-tag-gold">👑 Official Audition Form</span>
+            <h2 class="section-title-regal" style="font-size: 2.3rem;">Begin Your Journey To <span>The Crown</span></h2>
+            <p class="section-desc-light" style="max-width: 650px; margin: 0 auto;">
+                Fill in your official audition details below. Our pageant screening jury will review your credentials and contact you directly via WhatsApp &amp; Email.
+            </p>
+        </div>
+
+        <form id="audition-form" onsubmit="handleAuditionSubmit(event)" enctype="multipart/form-data">
+            <!-- Category Toggle Buttons -->
+            <div class="form-division-switch">
+                <label class="division-radio-btn" id="label-miss">
+                    <input type="radio" name="category" value="Miss World India 2026" checked id="radio-miss">
+                    <span>Miss World India (Age 18 - 35)</span>
+                </label>
+                <label class="division-radio-btn" id="label-mrs">
+                    <input type="radio" name="category" value="Mrs World India 2026" id="radio-mrs">
+                    <span>Mrs. World India (Age 21+)</span>
+                </label>
+            </div>
+
+            <div class="form-grid-inner">
+                <div class="form-group">
+                    <label class="field-label">Full Name *</label>
+                    <input type="text" name="applicant_name" class="field-input" placeholder="Your Full Legal Name" required id="applicant-name">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">WhatsApp Number *</label>
+                    <input type="tel" name="applicant_phone" class="field-input" placeholder="+91 XXXXX XXXXX" required id="applicant-phone">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">Email Address *</label>
+                    <input type="email" name="applicant_email" class="field-input" placeholder="yourname@domain.com" required id="applicant-email">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">Profession / Occupation</label>
+                    <input type="text" name="applicant_profession" class="field-input" placeholder="e.g. Entrepreneur, Model, Student, Doctor" id="applicant-profession">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">Date of Birth</label>
+                    <input type="date" name="applicant_dob" class="field-input" id="applicant-dob">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">Height &amp; Weight</label>
+                    <input type="text" name="applicant_stats" class="field-input" placeholder="e.g. 5'7&quot; / 54 kg" id="applicant-stats">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">City *</label>
+                    <input type="text" name="applicant_city" class="field-input" placeholder="Your Current City" required id="applicant-city">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">Country *</label>
+                    <input type="text" name="applicant_country" class="field-input" placeholder="Country of Residence" value="India" required id="applicant-country">
+                </div>
+
+                <div class="form-group full-width">
+                    <label class="field-label">Portfolio Photo Upload (Max 2MB)</label>
+                    <input type="file" name="applicant_file" class="field-input" accept="image/*" id="applicant-file">
+                    <span class="field-hint">Recent full-length or close-up photo. Professional photoshoot not mandatory.</span>
+                </div>
+
+                <div class="form-group full-width">
+                    <label class="field-label">Personal Statement / Why You Want The Crown</label>
+                    <textarea name="applicant_statement" class="field-input" rows="4" placeholder="Tell our jury about your aspirations, life journey, and what representing Miss &amp; Mrs World India means to you..." id="applicant-statement"></textarea>
+                </div>
+
+                <div class="form-group full-width" style="text-align: center; margin-top: 14px;">
+                    <button type="submit" id="submit-btn-audition" class="btn-pageant-gold" style="padding: 18px 60px; font-size: 0.96rem; margin: 0 auto;">
+                        <span id="btn-text">Submit Official Registration</span>
+                        <span id="btn-icon">👑</span>
+                    </button>
+                    <p style="font-size: 0.8rem; color: #94A3B8; margin-top: 14px;">
+                        🔒 All candidate information is kept strictly confidential under IndieVogues privacy policies.
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS (Pageant Clarity like FSIA & Mrs India Inc) -->
+<section class="section-wrap" id="faq">
+    <div class="section-header-center">
+        <span class="section-tag-gold">❓ Candidate Guidelines</span>
+        <h2 class="section-title-regal">Frequently Asked <span>Questions</span></h2>
+        <p class="section-desc-light">
+            Everything you need to know about registering, auditioning, and competing for Miss &amp; Mrs. World India 2026.
+        </p>
+    </div>
+
+    <div class="faq-wrap">
+        <div class="faq-item active">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+                <span>Is prior modeling or ramp walk experience required?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Not at all! Over 70% of our participants are first-time pageant entrants. Our 5-day luxury boot camp provides 100% comprehensive training in runway pacing, posing, camera etiquette, voice modulation, and stage presence by leading industry mentors.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+                <span>What are the exact age and marital status eligibility rules?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p><strong>Miss World India:</strong> Open to unmarried / single women aged 18 to 35 years.<br>
+                <strong>Mrs. World India:</strong> Open to married women, divorced, widowed, or single mothers aged 21 years and above. There is no upper age ceiling for our Mrs and Classic divisions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+                <span>How will the preliminary audition rounds be conducted?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Auditions are conducted both on-ground across major metropolitan cities and virtually via one-on-one video jury panels. If you cannot attend in person, your digital submission and video audition will be evaluated with equal prestige.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+                <span>Where will the Grand Coronation Finale be hosted?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>The Grand Coronation Gala will take place at a world-class 5-star international destination resort in October 2026, broadcasted across leading digital platforms and covered by prime fashion publications.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER (Preserving 100% of website details, contacts, and legal info) -->
+<footer id="contact">
+    <div class="footer-grid">
+        <div>
+            <h3 class="footer-brand-title">IndieVogues <span>World India</span></h3>
+            <p class="footer-desc">
+                <strong>IndieVogues Entertainment (OPC) Pvt. Ltd.</strong> is the confluence of art, elegance, and empowerment—uniting haute couture fashion, majestic pageantry, music, and media under one radiant crown.
+            </p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/indievogues_worldindiapageant/#" target="_blank" class="footer-social-link">Instagram</a>
+                <span style="color: #444;">•</span>
+                <a href="https://www.facebook.com/profile.php?id=61577059983028" target="_blank" class="footer-social-link">Facebook</a>
+                <span style="color: #444;">•</span>
+                <a href="https://www.youtube.com/@indieVoguesfashion" target="_blank" class="footer-social-link">YouTube</a>
+            </div>
+        </div>
+
+        <div>
+            <h4 class="footer-section-title">Navigation</h4>
+            <ul class="footer-link-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#categories">Competition Divisions</a></li>
+                <li><a href="#journey">Pageant Roadmap</a></li>
+                <li><a href="gallery.html">Runway Gallery</a></li>
+                <li><a href="about.html">About IndieVogues</a></li>
+                <li><a href="music.html">Music &amp; Media</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="footer-section-title">Pageant Divisions</h4>
+            <ul class="footer-link-list">
+                <li><a href="#register" onclick="selectCategory('miss')">Miss World India 2026</a></li>
+                <li><a href="#register" onclick="selectCategory('mrs')">Mrs. World India 2026</a></li>
+                <li><a href="sponsors.html">Sponsors &amp; Partners</a></li>
+                <li><a href="https://indievogues.com/events/">Events &amp; Auditions</a></li>
+                <li><a href="https://indievogues.com/media-pr/">Press &amp; Media Kit</a></li>
+                <li><a href="https://indievogues.com/privacy-policy/">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="footer-section-title">Concierge &amp; Inquiries</h4>
+            <p style="color: #CBD5E1; font-size: 0.9rem; margin-bottom: 6px;">Official Pageant Helpdesk:</p>
+            <span class="footer-concierge-phone">+91 8907861233</span>
+            <p style="color: #CBD5E1; font-size: 0.9rem; margin-bottom: 18px;">info@indievogues.com</p>
+            <a href="https://api.whatsapp.com/send?phone=918907861233&text=Hi%20IndieVogues,%20I%20would%20like%20to%20inquire%20about%20the%202026%20Pageant" target="_blank" class="btn-pageant-glass" style="width: 100%; justify-content: center; padding: 10px 18px; font-size: 0.8rem;">
+                Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+        <p>&copy; 2026 IndieVogues Entertainment (OPC) Pvt. Ltd. All Rights Reserved. Crafted with Haute Couture Excellence.</p>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Concierge Button -->
+<a href="https://api.whatsapp.com/send?phone=918907861233&text=Hi%20IndieVogues,%20I%20would%20like%20to%20inquire%20about%20the%202026%20Pageant" target="_blank" class="floating-concierge" aria-label="Chat on WhatsApp">
+    <span>💬</span>
+    <span>WhatsApp Desk</span>
+</a>
+
+<!-- Queens Lightbox Modal -->
+<div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox()">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+        <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="Enlarged Queen Preview" id="lightbox-img">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast-notification" id="toast-notify">
+    <h4 style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--gold-light); margin-bottom: 4px;">Application Received! 👑</h4>
+    <p style="font-size: 0.92rem; color: #E2E8F0;" id="toast-message">Thank you! Our pageant screening director will contact you via WhatsApp shortly.</p>
+</div>
+
+<script>
+    // Mobile Drawer Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const drawerClose = document.getElementById('drawer-close');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const drawerBackdrop = document.getElementById('mobile-drawer-backdrop');
+
+    function openMobileDrawer() {
+        if (mobileDrawer) mobileDrawer.classList.add('open');
+        if (drawerBackdrop) drawerBackdrop.classList.add('open', 'is-active');
+        document.body.classList.add('drawer-open');
+    }
+
+    function closeMobileDrawer() {
+        if (mobileDrawer) mobileDrawer.classList.remove('open');
+        if (drawerBackdrop) drawerBackdrop.classList.remove('open', 'is-active');
+        document.body.classList.remove('drawer-open');
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', openMobileDrawer);
+    if (drawerClose) drawerClose.addEventListener('click', closeMobileDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeMobileDrawer);
+
+    // Close drawer when clicking a link
+    document.querySelectorAll('.mobile-drawer a').forEach(link => {
+        link.addEventListener('click', closeMobileDrawer);
+    });
+
+    // Close drawer on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMobileDrawer();
+    });
+
+    // Select category helper
+    function selectCategory(type) {
+        const missRadio = document.getElementById('radio-miss');
+        const mrsRadio = document.getElementById('radio-mrs');
+        if (type === 'miss' && missRadio) {
+            missRadio.checked = true;
+        } else if (type === 'mrs' && mrsRadio) {
+            mrsRadio.checked = true;
+        }
+    }
+
+    // FAQ Accordion
+    function toggleFaq(btn) {
+        const item = btn.parentElement;
+        const allItems = document.querySelectorAll('.faq-item');
+        allItems.forEach(i => {
+            if (i !== item) i.classList.remove('active');
+        });
+        item.classList.toggle('active');
+    }
+
+    // Lightbox for Queens Gallery
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = img.getAttribute('data-caption') || '';
+            lightboxModal.classList.add('open');
+        });
+    });
+
+    function closeLightbox() {
+        if (lightboxModal) {
+            lightboxModal.classList.remove('open');
+        }
+    }
+
+    // Escape key closes modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Form Submission Handling
+    function handleAuditionSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('applicant-name').value;
+        const category = document.querySelector('input[name="category"]:checked').value;
+        const phone = document.getElementById('applicant-phone').value;
+        const city = document.getElementById('applicant-city').value;
+        
+        const toast = document.getElementById('toast-notify');
+        const toastMsg = document.getElementById('toast-message');
+        
+        const cleanPhone = phone.replace(/[^0-9]/g, '');
+        const conciergeMsg = `Hello IndieVogues! I have submitted my official audition application for ${category}. My name is ${name} from ${city}.`;
+        const waUrl = `https://wa.me/918907861233?text=${encodeURIComponent(conciergeMsg)}`;
+        
+        toastMsg.innerHTML = `
+            <div style="margin-bottom: 8px;">
+                Congratulations <strong>${name}</strong>! Your official audition registration for <strong>${category}</strong> has been logged in the Pageant Jury Database and sent to <strong>info@indievogues.com</strong>.
+            </div>
+            <div style="margin-top: 10px;">
+                <a href="${waUrl}" target="_blank" rel="noopener" class="btn-pageant-gold" style="display: inline-block; padding: 9px 20px; font-size: 0.82rem; text-decoration: none; border-radius: 4px;">
+                    💬 Connect With Pageant Concierge on WhatsApp &rarr;
+                </a>
+            </div>
+        `;
+        toast.classList.add('show');
+
+        // Reset form
+        document.getElementById('audition-form').reset();
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 12000);
+    }
+</script>
+
+</body>
+</html>
